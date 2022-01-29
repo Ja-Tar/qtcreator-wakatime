@@ -88,8 +88,8 @@ void CliGetter::startUnzipping(QString location){
     cmd.append(location).append(" -C ").append(waka_extracted_dir.absolutePath());
     result = system(cmd.toStdString().c_str());
 #else
-    QString cmd("tar -xf ");
-    cmd.append(location).append(" -C ").append(waka_extracted_dir.absolutePath());
+    QString cmd("unzip ");
+    cmd.append(location).append(" -d ").append(waka_extracted_dir.absolutePath());
     result = system(cmd.toStdString().c_str());
 #endif
     if(result!=0){
@@ -97,7 +97,7 @@ void CliGetter::startUnzipping(QString location){
 
         //delete the zipped file
         QFile zip(location);
-        zip.remove();
+        //zip.remove();
         emit promptMessage(msg);
     }else{
         msg="Done Extracting files";
