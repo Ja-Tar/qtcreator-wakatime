@@ -15,7 +15,7 @@ jobs:
       matrix:
         config:
         - {
-            name: "Windows Latest MSVC QtCreator 6.0.1", artifact: "Windows-x64",
+            name: "Windows Latest MSVC QtCreator 9.0.2", artifact: "Windows-x64",
             os: windows-latest,
             qtc_version: 9.0.2,
             qt_version: 6.2.2,
@@ -25,6 +25,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - name: Append the directory of 'vcvarsall.bat' to PATH environment variable
+      uses: myci-actions/export-env-var-powershell@1
+      with:
+        name: PATH
+        value: $env:PATH;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build
 
     - name: Download Ninja and CMake
       shell: cmake -P {0}
