@@ -48,7 +48,7 @@ void WakaPlugin::showMessagePrompt(const QString str){
         return;
 
     if(_wakaOptions->isDebug())
-        Core::MessageManager::appendMessage(str, Core::MessageManager::Mode::Normal);
+        Core::MessageManager::writeSilently(str);
 }
 
 QDir WakaPlugin::getWakaCLILocation(){
