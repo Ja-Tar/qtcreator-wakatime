@@ -7,34 +7,34 @@
 namespace Wakatime {
 namespace Internal {
 
-WakaOptionsPage::WakaOptionsPage(const QSharedPointer<WakaOptions> &options, QObject *parent) : Core::IOptionsPage(parent), _options(options)
+WakaOptionsPage::WakaOptionsPage(const QSharedPointer<WakaOptions> &options, QObject *parent)
+    : Core::IOptionsPage(parent), _options(options)
 {
     setId(Constants::OPTION_ID);
     setDisplayName(tr("General"));
     setCategory(Constants::OPTION_CATEGORY);
-    setDisplayCategory(QCoreApplication::translate("Wakatime", "Wakatime"));
-    setCategoryIcon(Utils::Icon({{":/logo.png", Utils::Theme::PanelTextColorDark}}, Utils::Icon::Tint));
+    // setDisplayCategory oraz setCategoryIcon zostały usunięte w Qt Creator 17+
 }
 
 QWidget *WakaOptionsPage::widget()
 {
     _options->read();
 
-   if(!_widget)
-   {
-       _widget = new WakaOptionsWidget(_options);
-   }
-   _widget->restore();
+    if(!_widget)
+    {
+        _widget = new WakaOptionsWidget(_options);
+    }
+    _widget->restore();
 
-   return _widget;
+    return _widget;
 }
 
 void WakaOptionsPage::apply()
 {
-   if(_widget)
-   {
-       _widget->apply();
-   }
+    if(_widget)
+    {
+        _widget->apply();
+    }
 }
 
 void WakaOptionsPage::finish()
