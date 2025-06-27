@@ -13,11 +13,9 @@ namespace Internal {
 
 class WakaOptionsPage : public Core::IOptionsPage
 {
-    Q_OBJECT
-
 public:
     explicit WakaOptionsPage(const QSharedPointer<WakaOptions> &options, QObject *parent = nullptr);
-    virtual ~WakaOptionsPage() override = default;
+    ~WakaOptionsPage() override = default;
 
 private:
     QWidget *widget() override;

@@ -39,7 +39,7 @@ public:
     ~WakaPlugin() override;
     void showMessagePrompt(const QString str);
 
-    bool initialize(const QStringList &arguments, QString *errorString) override;
+    bool initialize(const QStringList &arguments, QString *errorString); // usuń override
     void extensionsInitialized() override;
     ShutdownFlag aboutToShutdown() override;
 
