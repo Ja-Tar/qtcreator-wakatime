@@ -243,7 +243,7 @@ jobs:
         endif()
 
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       id: upload_artifact
       with:
         path: ./${{ env.PLUGIN_NAME }}-${{ matrix.config.qtc_version }}-${{ matrix.config.artifact }}.7z
@@ -270,7 +270,7 @@ jobs:
       run: |
         echo "${{ steps.create_release.outputs.upload_url }}" > ./upload_url
 
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         path: ./upload_url
         name: upload_url
