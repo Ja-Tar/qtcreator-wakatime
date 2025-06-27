@@ -11,7 +11,7 @@ WakaOptionsPage::WakaOptionsPage(const QSharedPointer<WakaOptions> &options, QOb
     : Core::IOptionsPage(parent), _options(options)
 {
     setId(Constants::OPTION_ID);
-    setDisplayName(tr("General"));
+    setDisplayName(QCoreApplication::translate("Wakatime::Internal::WakaOptionsPage", "General"));
     setCategory(Constants::OPTION_CATEGORY);
     // setDisplayCategory oraz setCategoryIcon zostały usunięte w Qt Creator 17+
 }
