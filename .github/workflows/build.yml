@@ -292,13 +292,13 @@ jobs:
 
     steps:
     - name: Download artifact
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.PLUGIN_NAME }}-${{ matrix.config.qtc_version }}-${{ matrix.config.artifact }}
         path: ./
 
     - name: Download URL
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: upload_url
         path: ./
