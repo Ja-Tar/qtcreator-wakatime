@@ -47,7 +47,7 @@ jobs:
           }
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Checkout submodules
       id: git
       shell: cmake -P {0}
